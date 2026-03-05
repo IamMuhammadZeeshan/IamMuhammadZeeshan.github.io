@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48487621-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-48487621-4');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Muhammad Zeeshan</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <style>
+    /* Make the p5 canvas cover the <main> section */
+    #wave-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      /* allows clicking through the canvas */
+    }
+
+    /* Social icons: centered with equal spacing */
+    #header .profile .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    #header .profile .social-links a {
+      margin: 0 !important; /* override template margins so gap controls spacing */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;   /* uniform icon button size */
+      height: 34px;  /* uniform icon button size */
+      line-height: 34px;
+    }
+
+    #header .profile .social-links a svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    /* Make sure the Google Scholar SVG is perfectly centered */
+    #header .profile .social-links a.google {
+      padding: 0;
+    }
+
+    #header .profile .social-links a.google svg {
+      margin: 0 auto;
+    }
+
+    /* --- Colorful social buttons (brand colors) --- */
+    #header .profile .social-links a.facebook { background: #1877F2; }
+    #header .profile .social-links a.linkedin { background: #0A66C2; }
+    #header .profile .social-links a.github { background: #24292F; }
+    #header .profile .social-links a.email { background: #D44638; }
+    #header .profile .social-links a.google { background: #4285F4; }
+
+    /* Keep icons/SVG white for contrast */
+    #header .profile .social-links a.facebook i,
+    #header .profile .social-links a.linkedin i,
+    #header .profile .social-links a.github i,
+    #header .profile .social-links a.email i {
+      color: #ffffff !important;
+    }
+
+    #header .profile .social-links a.google svg path {
+      fill: #ffffff !important;
+    }
+
+    /* Slight hover lift */
+    #header .profile .social-links a:hover {
+      transform: translateY(-1px);
+      transition: transform 0.15s ease-in-out;
+    }
+
+    /* Top section full-width figure, capped to half the viewport height */
+    #home .hero-figure {
+      width: 100%;
+      max-width: 100%;
+      max-height: 50vh; /* half of the viewport height */
+      height: auto;
+      object-fit: contain; /* keep full image visible */
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    #home {
+      padding-top: 0;
+      padding-bottom: 0;
+      background: #d9f2ff; /* light blue background behind the image */
+    }
+
+    #home .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Push a “Download CV” tab to the bottom of the left sidebar */
+    #header .nav-menu {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #header .nav-menu ul {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #header .nav-menu ul li.cv-download {
+      margin-top: auto; /* pushes this item to the bottom */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Muhammad Zeeshan</a></h1>
+        <div class="social-links mt-3 text-center">
+          <!-- <a href="https://twitter.com/YourUsername" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/m.zeeshan5885" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=2ZLoXEkAAAAJ&hl=en" class="google">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+              <path fill="#ffffff"
+                d="M390.9 298.5c0 0 0 .1 .1 .1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64h0c1.7-3.6 3.6-7.2 5.6-10.7c4.4-7.6 9.4-14.7 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3c33.6 0 64.6 11.1 89.6 29.9c9.1 6.9 17.4 14.7 24.8 23.5c5.6 6.6 10.6 13.8 15 21.3c2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0 512 202.7l-94.7 77.1z" />
+            </svg>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/muhammad-zeeshan-502697172/" class="linkedin"><i
+              class="fab fa-linkedin"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/IamMuhammadZeeshan" class="github"><i class="fab fa-github"></i></a>
+          <a href="mailto:m.zeeshan5885@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
+          <!-- <a href="assets/pdf/your_cv.pdf" class="cv">CV</a> -->
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="#home"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#news"><i class="bx bx-news"></i> <span>News</span></a></li>
+          <li><a href="#pubs"><i class="bx bx-book-content"></i> <span>Publications</span></a></li>
+          <li><a href="#mentorship"><i class="bx bx-group"></i> <span>Mentorship</span></a></li>
+          <li><a href="#teaching"><i class="bx bx-chalkboard"></i> <span>Teaching</span></a></li>
+          <li><a href="#awards"><i class="bx bx-award"></i> <span>Awards</span></a></li>
+          <li><a href="timeline.html"><i class="bx bx-photo-album"></i> <span>Visual Timeline</span></a></li>
+          <li class="cv-download"><a href="assets/pdf/MuhammadZeeshanCV.pdf" target="_blank" rel="noopener noreferrer" download><i class="bx bx-download"></i> <span>Download CV</span></a></li>
+          <!-- 
+          <li><a href="#prospective"><i class="bx bx-envelope"></i> Working with Me</a></li> -->
+        </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Top Section ======= -->
+    <section id="home" class="about">
+      <div class="container">
+        <img src="assets/img/ligo.png" alt="Figure" class="hero-figure">
+        <div class="content">
+          <div class="hero-container" data-aos="fade-in" style="border-left: 1px solid #000;">
+            <p><span class="typed"
+                data-typed-items="Fulbright PhD Scholar at Rochester Institute of Technology, LIGO Scientific Collaboration (Rates & Populations), Population inference of compact binaries (incl. eccentric BBHs), Bayesian inference & hierarchical modeling"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Top Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div id="wave-overlay"></div>
+
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>
+            I am a member of the <a href="https://www.ligo.caltech.edu" target="_blank" rel="noopener noreferrer">LIGO</a> Scientific Collaboration and a <a href="https://www.usefp.org/scholarships/fulbright-degree.cfm" target="_blank" rel="noopener noreferrer"> Fulbright PhD Scholar</a> in Astrophysical Sciences and Technology
+            <a href="https://www.rit.edu/study/astrophysical-sciences-and-technology-phd" target="_blank" rel="noopener noreferrer">(AST)</a>
+            at Rochester Institute of Technology (RIT), working under the supervision of
+            <a href="https://ccrg.rit.edu/user/richard.oshaughnessy" target="_blank" rel="noopener noreferrer">Prof. Richard O'Shaughnessy</a>.
+            My research focuses on population inference of compact binaries (binary black holes and binary neutron stars), with an emphasis on eccentricity using gravitational-wave data analysis.
+            I lead the development of <a href="https://github.com/gwkokab/gwkokab" target="_blank" rel="noopener noreferrer">GWKokab</a>, a JAX-based computational framework for efficient and flexible population inference for sub-population studies including eccentricity.
+          </p>
+
+          <p>
+            I have authored multiple peer-reviewed publications and regularly present my work at major international venues such as (<a href="https://www.ictp.it/" target="_blank" rel="noopener noreferrer">ICTP</a>, <a href="https://www.ias.edu/" target="_blank" rel="noopener noreferrer">IAS</a>, <a href="https://www.aps.org/" target="_blank" rel="noopener noreferrer">APS</a>, <a href="https://aas.org/" target="_blank" rel="noopener noreferrer">AAS</a>, and <a href="https://www.ligo.org/scientists.php" target="_blank" rel="noopener noreferrer">LVK</a>).
+            I have also mentored undergraduate students to date through research projects in astrophysics.
+          </p>
+
+          <p>
+            Before starting my PhD at RIT, I served as a lecturer at the <a href="https://ucp.edu.pk/" target="_blank" rel="noopener noreferrer">University of Central Punjab</a> for two years, where I taught Calculus and Analytical Geometry, Special Relativity, and General Relativity to undergrad students.
+            I have completed two master's degrees: first  <a href="https://inspirehep.net/files/a6d53e2bebed7f56079eb17e00f43267" target="_blank" rel="noopener noreferrer">MS Mathematics</a> from Pakistan and second <a href="https://repository.rit.edu/theses/11574/" target="_blank" rel="noopener noreferrer">MS Astrophysics</a> from USA.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            You might find it interesting to read some of my <a href="#pubs">publications</a>, or reach out to me via
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/muhammad-zeeshan-502697172/">LinkedIn</a>
+            or email (<a href="mailto:m.zeeshan5885@gmail.com">m.zeeshan5885@gmail.com</a>).
+          </p>
+        </div>
+        <!-- </div> -->
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- p5.js sketch -->
+    <script>
+      new p5(function (p) {
+        let t = 0;
+        const d = 250;
+
+        p.setup = function () {
+          // Create canvas inside the overlay div
+          const canvasParent = document.getElementById('wave-overlay');
+          const canvas = p.createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+          canvas.parent(canvasParent);
+          p.stroke(p.color('#ffffff'), 120); // white wave for contrast
+          p.noFill();
+          p.frameRate(30);
+        }
+        p.draw = function () {
+          p.clear(); // transparent background so you can see the section below
+          p.beginShape();
+          for (let i = -1; i <= d; i++) {
+            const x = p.map(i, 0, d, 0, p.width);
+            const y = p.map(p.noise(i * 0.01, t * 0.005), 0, 1, 0, p.height)
+              + p.map(i, 0, d, -p.height / 4, p.height / 2);
+            p.curveVertex(x, y);
+          }
+          p.endShape(p.OPEN);
+          t += 1;
+        }
+
+        p.windowResized = function () {
+          const canvasParent = document.getElementById('wave-overlay');
+          p.resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+        }
+      });
+    </script>
+
+    <!-- ======= News Section ======= -->
+    <section id="news" class="news">
+      <div class="container">
+        <div class="section-title">
+          <h2>News</h2>
+        </div>
+        <table>
+          <tr>
+            <td><font color="#00b4d9">2026</font></td>
+            <td>| I will present oral presentation, <a target="_blank" rel="noopener noreferrer" href="https://www.aps.org/">APS Global Physics Summit</a>, Denver, Colorado, USA.</td>
+          </tr>
+          <tr>
+            <td><font color="#00b4d9">2026</font></td>
+            <td>| Oral presentation, <a target="_blank" rel="noopener noreferrer" href="https://aas.org/">American Astronomical Society (AAS)</a>, Arizona, USA.</td>
+          </tr>
+          <tr>
+            <td><font color="#00b4d9">2025</font></td>
+            <td>| Poster presentation, <a target="_blank" rel="noopener noreferrer" href="https://www.ias.edu/">Institute for Advanced Study (IAS)</a>, Princeton, NJ, USA.</td>
+          </tr>
+          <tr>
+            <td><font color="#00b4d9">2024</font></td>
+            <td>| Invited speaker, International Conference on Relativistic Astrophysics and Cosmology, Lahore, Pakistan.</td>
+          </tr>
+          <tr>
+            <td><font color="#00b4d9">2023</font></td>
+            <td>| Participant, LIGO–Virgo–KAGRA March Meeting, Louisiana State University, USA.</td>
+          </tr>
+        </table>
+        <br />
+        <p>More updates coming soon.</p>
+      </div>
+    </section>
+    <!-- End News Section -->
+
+    <!-- ======= pubs Section ======= -->
+    <section id="pubs" class="pubs section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Selected Recent Publications</h2>
+          <ul>
+            <li><strong>Muhammad Zeeshan</strong>, Richard O'Shaughnessy, Natalie Malagon, <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2602.11030">“Population Properties of Binary Black Holes with Eccentricity”</a>. Under review at <em>Physical Review D</em> (arXiv:2602.11030).</li>
+            <li>Meesum Qazalbash, <strong>Muhammad Zeeshan</strong>, Richard O'Shaughnessy, <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2509.13638">“An Implementation to Identify the Properties of Multiple Population of Gravitational Wave Sources”</a>. Under review at <em>Physical Review D</em> (arXiv:2509.13638).</li>
+            <li><strong>Muhammad Zeeshan</strong>, Richard O'Shaughnessy, <a target="_blank" rel="noopener noreferrer" href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.063009">“Eccentricity matters: Impact of eccentricity on inferred binary black hole populations”</a>. <em>Physical Review D</em> <strong>110</strong>, 063009 (2024).</li>
+          </ul>
+          <p>See <a href="assets/pdf/MuhammadZeeshanCV.pdf" target="_blank" rel="noopener noreferrer">my CV</a> and <a href="https://scholar.google.com/citations?user=2ZLoXEkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> for the full publication list.</p>
+        </div>
+
+      </div>
+    </section>
+    <!-- End pubs Section -->
+
+    <!-- ======= Mentorship Section ======= -->
+    <section id="mentorship" class="resume">
+      <div class="container">
+        <div class="section-title">
+          <h2>Mentorship</h2>
+          <p>I supervise and co-supervise undergraduate researchers in gravitational-wave astrophysics and cosmology, focusing on population inference, Bayesian methods, and reproducible scientific computing.</p>
+        </div>
+        <ul>
+          <li>
+            <strong>Co-Mentor — NSF Research Experience for Undergraduates (REU)</strong> (Summer 2025, Rochester Institute of Technology, Rochester, NY, USA)
+            <ul>
+              <li><strong>Student:</strong> Sophiya Mehra</li>
+              <li><strong>Project:</strong> Population Inference Enhanced by Analytical Likelihood <em>(led to a publication)</em></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Co-Advisor — Undergraduate Final Year Project (FYP)</strong> (2023–2024, Habib University, Karachi, Pakistan)
+            <ul>
+              <li><strong>Students:</strong> Meesum Qazalbash; Safi Haider; Abbas; Maham</li>
+              <li><strong>Project:</strong> Population Inference using Bayesian Neural Networks</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Advisor — Undergraduate Final Year Project</strong> (2020–2021, University of Central Punjab, Lahore, Pakistan)
+            <ul>
+              <li><strong>Students:</strong> Eiman Maqsood; Amna Iftikhar; Iqra Nadeem</li>
+              <li><strong>Project:</strong> Contribution of Collisional Matter in Modified Theories of Gravity</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Co-Advisor — Undergraduate Final Year Project</strong> (2020–2021, University of Central Punjab, Lahore, Pakistan)
+            <ul>
+              <li><strong>Student:</strong> Hafsa Jameel</li>
+              <li><strong>Project:</strong> Comparison of energy conditions in general relativity and modified theories of gravity <em>(published)</em></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Mentorship Section -->
+
+    <!-- ======= Teaching Section ======= -->
+    <section id="teaching" class="resume">
+      <div class="container">
+        <div class="section-title">
+          <h2>Teaching Experience</h2>
+          <p>Teaching experience across undergraduate physics and mathematics, including graduate teaching assistantships and lecturer appointments.</p>
+        </div>
+        <ul>
+          <li>
+            <strong>Graduate Teaching Assistant, Rochester Institute of Technology (RIT)</strong> — Rochester, NY, USA (Jan 2022–Aug 2025)
+            <ul>
+              <li>Supported instruction through recitations/tutorial sessions, grading, and student mentoring.</li>
+              <li><strong>Courses:</strong> College Physics I–II; Modern Physics; Stellar Astrophysics.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Lecturer (Full-Time), University of Central Punjab (UCP)</strong> — Lahore, Pakistan (Mar 2020–Aug 2021)
+            <ul>
+              <li><strong>Courses:</strong> Calculus and Analytical Geometry; Pre-Calculus; Special Relativity; General Relativity.</li>
+              <li>Designed tutorials and assessments; held office hours and supported students’ exam preparation.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Visiting Lecturer, University of Education</strong> — Lahore, Pakistan (Aug 2019–Jan 2020)
+            <ul>
+              <li><strong>Course:</strong> Calculus I.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Visiting Lecturer, University of Central Punjab (UCP)</strong> — Lahore, Pakistan (Mar 2019–Mar 2020)
+            <ul>
+              <li><strong>Course:</strong> Calculus and Analytical Geometry.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Teaching Section -->
+
+    <!-- ======= Awards Section ======= -->
+    <section id="awards" class="resume section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Awards</h2>
+        </div>
+        <ul>
+          <li><strong>Fulbright PhD Scholarship</strong> — Fully funded PhD scholarship for graduate study in the United States.</li>
+          <li><strong>Graduate Funding (RIT)</strong> — Graduate support as 50% tuition fee award in Astrophysical Sciences and Technology.</li>
+          <li><strong>Merit-based Support</strong> — Fully Funded academic support for master’s studies and research training (Pakistan/USA).</li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Awards Section -->
+
+
+
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" hidden>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+
+</body>
+
+</html>
